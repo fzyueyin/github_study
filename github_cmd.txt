@@ -10,4 +10,4 @@
 7   git commit -m "wrote a github_cmd file"  把文件提交到仓库，-m后面的为提交说明
 8   git status                 查看仓库当前状态
 9   git diff                   查看修改了哪些内容还没提交
-10  
+10  git log --pretty=oneline   查看有多少历史版本
