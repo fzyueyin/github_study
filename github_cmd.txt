@@ -1,5 +1,6 @@
 这个文件用于记录github客户端的使用命令
 
+=========基本命令====================================
 0   git clone <指定文件夹路径> 下载指定文件夹                
 1   cd /d/00_cs_code/git       跳转命名，跳到指定的目录或者文件下
 2   mkdir learngit             创建文件夹
@@ -16,8 +17,40 @@
 13  git reflog                 查看每一次命令
 14  git checkout -- file       可以丢弃工作区的修改，就是让这个文件回到最近一次git commit或git add时的状态
 15  git rm ts.txt              删除库中的文件，也要配合git commit 命令使用
-16  ssh-keygen -t rsa -C "youremail@example.com"  创建SSH key
-17  git remote add origin git@github.com:michaelliao/learngit.git   将本地库关联到远端库，“git@github.com:michaelliao/learngit.git”为远端实际生产的文件库名
-18  git push -u origin master  将本地内容推送到远端库(第一次)
-19  git push origin master     将本地内容推送到远端库(非第一次)
 
+=========远程仓库设计到的命令==============================
+1   ssh-keygen -t rsa -C "youremail@example.com"  创建SSH key ，登录github后在设置中添加SSH key，将生产的id_rsa.pub中的内容拷贝进去就ok
+2   git remote add origin git@github.com:michaelliao/learngit.git   将本地库关联到远端库，“git@github.com:michaelliao/learngit.git”为远端实际生产的文件库名
+3   git push -u origin master  将本地内容推送到远端库(第一次)
+4   git push origin master     将本地内容推送到远端库(非第一次) 
+5   git remote                 获取远程库的名字
+5   git remote -v              获取远程库的详细信息
+
+=========分支管理设计到的命令==============================
+1   git checkout -b dev        创建dev分支，并切换到dev分支
+2   git branch dev             创建dev分支
+3   git checkout dev           切换到dev分支
+4   git branch                 查看当前分支
+5   git merge dev              合并当前指定分支到当前分支
+6   git branch -d dev          删除指定分支
+7   git merge --no-ff -m "merge with no-ff" dev   用普通模式合并，合并后历史有分支
+8   git stash                  把当前工作现场“存储”起来，等以后恢复现场后继续工作
+9   git stash list             查看保存的工作现场
+10  git stash apply            恢复工作现场，但是恢复后，stash内容并不删除
+11  git stash drop             删除stash内容
+12  git stash pop              恢复工作现场的同时把stash内容也删了
+13  git branch -D feature-vulcan 强行删除分支 
+14  git pull                   抓取远程的新提交
+15  git checkout -b branch-name origin/branch-name   在本地创建和远程分支对应的分支
+16  git branch --set-upstream branch-name origin/branch-name  建立本地分支和远程分支的关联
+
+17  多人协作的工作模式通常样子：
+    1）首先，可以试图用git push origin <branch-name>推送自己的修改；
+    2）如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+    3）如果合并有冲突，则解决冲突，并在本地提交；
+    4）没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！
+    如果git pull提示no tracking information,则说明本地分支和远程分支的链接关系没有创建,用命令git branch --set-upstream-to <branch-name> origin/<branch-name>
+
+18  git rebase                   可以把本地未push的分叉提交历史整理成直线，rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比    
+
+=========标签管理命令==================================
