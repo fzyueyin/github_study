@@ -16,3 +16,8 @@
 13  git reflog                 查看每一次命令
 14  git checkout -- file       可以丢弃工作区的修改，就是让这个文件回到最近一次git commit或git add时的状态
 15  git rm ts.txt              删除库中的文件，也要配合git commit 命令使用
+16  ssh-keygen -t rsa -C "youremail@example.com"  创建SSH key
+17  git remote add origin git@github.com:michaelliao/learngit.git   将本地库关联到远端库，“git@github.com:michaelliao/learngit.git”为远端实际生产的文件库名
+18  git push -u origin master  将本地内容推送到远端库(第一次)
+19  git push origin master     将本地内容推送到远端库(非第一次)
+
