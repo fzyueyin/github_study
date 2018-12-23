@@ -7,10 +7,12 @@
 4   git init                   把当前目录变成git可以管理的仓库
 5   ls -ah                     显示当前目录下包含的文件
 6   git add github_cmd.txt     将文件添加到仓库
-7   git commit -m "wrote a github_cmd file"  把文件提交到仓库，-m后面的为提交说明
+7   git commit -m "write file" 把文件提交到仓库，-m后面的为提交说明
 8   git status                 查看仓库当前状态
 9   git diff                   查看修改了哪些内容还没提交
 10  git log --pretty=oneline   查看有多少历史版本
 11  git reset -hard HEAD^      回到上一个版本
 12  git reset -hard 1578b      直接跳到指定的版本"1578b"，这个版本号"1578b"取完整的版本号前几位就ok
 13  git reflog                 查看每一次命令
+14  git checkout -- file       可以丢弃工作区的修改，就是让这个文件回到最近一次git commit或git add时的状态
+15  git rm ts.txt              删除库中的文件，也要配合git commit 命令使用
