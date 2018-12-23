@@ -1,7 +1,10 @@
 这个文件用于记录github客户端的使用命令
 
-1 cd /d/00_cs_code/git 跳转命名，跳到指定的目录或者文件下
-2 mkdir learngit       创建文件夹
-3 pwd                  显示当前目录
-4 git init             把当前目录变成git可以管理的仓库
-5 ls -ah               显示当前目录下包含的文件
+1 cd /d/00_cs_code/git       跳转命名，跳到指定的目录或者文件下
+2 mkdir learngit             创建文件夹
+3 pwd                        显示当前目录
+4 git init                   把当前目录变成git可以管理的仓库
+5 ls -ah                     显示当前目录下包含的文件
+6 git add github_cmd.txt     将文件添加到仓库
+7 git commit -m "wrote a github_cmd file"  把文件提交到仓库，-m后面的为提交说明
+8 
