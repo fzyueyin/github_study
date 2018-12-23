@@ -11,3 +11,6 @@
 8   git status                 查看仓库当前状态
 9   git diff                   查看修改了哪些内容还没提交
 10  git log --pretty=oneline   查看有多少历史版本
+11  git reset -hard HEAD^      回到上一个版本
+12  git reset -hard 1578b      直接跳到指定的版本"1578b"，这个版本号"1578b"取完整的版本号前几位就ok
+13  git reflog                 查看每一次命令
